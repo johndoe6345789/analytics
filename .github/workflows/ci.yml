@@ -29,7 +29,8 @@ jobs:
           path: ~/.npm
           key: npm-${{ runner.os }}-${{ hashFiles('**/package.json') }}
           restore-keys: npm-${{ runner.os }}-
-      - name: Install dependencies
+      - name: Install (services/analytics/admin)
+        working-directory: services/analytics/admin
         run: npm install
       - name: lint (services/analytics/admin)
         working-directory: services/analytics/admin
